@@ -1,5 +1,5 @@
 import { vertexShader, fragmentShader } from "./shaders.js";
-import * as THREE from "three";
+import * as THREE from "./node_modules/three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -112,7 +112,11 @@ document.addEventListener('mouseenter', () => {
   cursor.style.opacity = '1';
 });
 
+
 const heroH2 = document.querySelector(".hero-content h2");
+// this is to fix the way the text flashes upon reloading the page
+// when it should not be visible
+heroH2.style.visibility = 'visible';
 const split = new SplitText(heroH2, { type: "words" });
 const words = split.words;
 
