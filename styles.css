@@ -7,10 +7,9 @@
 }
 
 html, body {
-    overflow-x: hidden;
-    overflow-y: auto;
     overscroll-behavior: none;
     cursor:none;
+    -webkit-overflow-scrolling: touch;
 }
 
 .custom-cursor {
