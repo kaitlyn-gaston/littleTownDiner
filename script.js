@@ -1,9 +1,9 @@
 import { vertexShader, fragmentShader } from "./shaders.js";
-import * as THREE from "./node_modules/three";
-import gsap from "./node_modules/gsap";
-import { ScrollTrigger } from "./node_modules/gsap/ScrollTrigger";
-import { SplitText } from "./node_modules/gsap/SplitText";
-import Lenis from "./node_modules/lenis";
+import * as THREE from "three";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
