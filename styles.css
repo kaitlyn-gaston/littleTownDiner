@@ -11,6 +11,10 @@ html, body {
     cursor:none;
 }
 
+body {
+    height: 275vh;
+}
+
 .custom-cursor {
   width: 1.4rem;
   height: 1.4rem;
