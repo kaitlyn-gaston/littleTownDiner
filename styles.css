@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 
+.mySlides {display: none;}
+
 :root {
     --base-100: #ebf5df;
     --base-200: #fec81d;
@@ -141,6 +143,16 @@ p {
 .about p {
     width: 40%;
     text-align: center;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .5} 
+  to {opacity: 1}
 }
 
 @media (max-width:1000px) {

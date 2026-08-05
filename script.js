@@ -103,7 +103,7 @@ document.addEventListener('mousemove', (e) => {
   cursor.style.top = `${e.clientY}px`;
 });
 
-// doesn't work for some reason? maybe because of the difference effect
+// doesn't work for some reason? maybe a browser thing
 document.addEventListener('mouseleave', () => {
   cursor.style.opacity = '0';
 });
@@ -112,6 +112,21 @@ document.addEventListener('mouseenter', () => {
   cursor.style.opacity = '1';
 });
 
+let slideIndex = 0;
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 5000);
+}
+
+showSlides();
 
 const heroH2 = document.querySelector(".hero-content h2");
 // this is to fix the way the text flashes upon reloading the page
