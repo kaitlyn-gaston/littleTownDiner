@@ -116,7 +116,7 @@ let slideIndex = 0;
 
 function showSlides() {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
+  let slides = document.getElementsByClassName("hero-img");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
   }
