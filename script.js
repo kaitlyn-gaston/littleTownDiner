@@ -7,7 +7,7 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-const lenis = new Lenis();
+const lenis = new Lenis({touchMultiplier: 0});
 function raf(time) {
     lenis.raf(time);
     ScrollTrigger.update();

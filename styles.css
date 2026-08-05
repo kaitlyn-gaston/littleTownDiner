@@ -8,7 +8,6 @@
 
 html, body {
     overscroll-behavior: none;
-    cursor:none;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -88,6 +87,9 @@ p {
     align-items: center;
     gap: 0.5rem;
     text-align: center;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
 }
 
 .hero-header p{
@@ -117,6 +119,9 @@ p {
 .hero-content h2 {
     width: 75%;
     color: var(--base-300);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
 }
 
 .about {
@@ -127,7 +132,10 @@ p {
     justify-content: center;
     align-items: center;
     background-color: var(--base-300);
-    color: var(--base-100)
+    color: var(--base-100);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
 }
 
 .about p {
@@ -138,5 +146,11 @@ p {
 @media (max-width:1000px) {
     .hero-content h2, .about p {
         width: calc(100% - 4rem);
+    }
+}
+
+@media (pointer: fine) {
+    html, body {
+        cursor: none;
     }
 }
