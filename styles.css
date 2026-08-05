@@ -8,6 +8,26 @@
 
 html, body {
     overflow:hidden;
+    cursor:none;
+}
+
+.custom-cursor {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out;
+}
+
+body:active .custom-cursor {
+  transform: translate(-50%, -50%) scale(0.75);
 }
 
 * {

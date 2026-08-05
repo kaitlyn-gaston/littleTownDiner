@@ -95,6 +95,23 @@ window.addEventListener("resize", () => {
     material.uniforms.uResolution.value.set(hero.offsetWidth, hero.offsetHeight);
 });
 
+// Custom cursor
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = `${e.clientX}px`;
+  cursor.style.top = `${e.clientY}px`;
+});
+
+// doesn't work for some reason? maybe because of the difference effect
+document.addEventListener('mouseleave', () => {
+  cursor.style.opacity = '0';
+});
+
+document.addEventListener('mouseenter', () => {
+  cursor.style.opacity = '1';
+});
+
 const heroH2 = document.querySelector(".hero-content h2");
 const split = new SplitText(heroH2, { type: "words" });
 const words = split.words;
