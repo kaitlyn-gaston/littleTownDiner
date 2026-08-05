@@ -7,12 +7,10 @@
 }
 
 html, body {
-    overflow:hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: none;
     cursor:none;
-}
-
-body {
-    height: 275vh;
 }
 
 .custom-cursor {
