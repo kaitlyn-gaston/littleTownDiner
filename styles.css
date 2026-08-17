@@ -160,13 +160,12 @@ p {
 }
 
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+  animation: fadeInOut 10s ease-in-out infinite;
 }
 
-@keyframes fade {
-  from {opacity: .5} 
-  to {opacity: 1}
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  20%, 80% { opacity: 1; }
 }
 
 @media (max-width:1000px) {
@@ -179,4 +178,13 @@ p {
     html, body {
         cursor: none;
     }
+}
+
+@media (hover: none) {
+    .custom-cursor {
+    display: none !important;
+  }
+  html, body, a, button {
+    cursor: auto !important;
+  }
 }
