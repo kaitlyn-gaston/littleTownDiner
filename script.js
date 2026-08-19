@@ -130,7 +130,7 @@ showSlides();
 
 const heroH2 = document.querySelector(".hero-content h2");
 // this is to fix the way the text flashes upon reloading the page
-// when it should not be visible
+// when it should not be visible, offset
 heroH2.style.visibility = 'visible';
 const split = new SplitText(heroH2, { type: "words" });
 const words = split.words;
