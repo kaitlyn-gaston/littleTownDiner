@@ -4,45 +4,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scroll Animation</title>
+  <title>Little Town Diner</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
+
+<nav class="navbar">
+  <div class="logo"><h3>Little Town Diner</h3></div>
+  
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#hours">Hours</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#order">Order Online</a></li>
+  </ul>
+</nav>
 
 <body>
   <div class="custom-cursor"></div>
   <section class="hero">
-    <div class="hero-img fade">
-      <img src="./hero-img.jpg" alt="" />
-    </div>
-    <div class="hero-img fade">
-      <img src="./hero-img2.jpg" alt="" />
-    </div>
-    <div class="hero-img fade">
-      <img src="./hero-img3.jpg" alt="" />
+    <div class="hero-img">
+      <img src="./interior.jpg" alt="An interior shot of Little Town Diner" />
     </div>
     </div>
 
     <div class="hero-header">
-        <img src="./hongkongflag2.png" alt="" />
-        <h1>香港</h1>
+        <img src="./logo.webp" alt="Little Town Diner logo" />
     </div>
 
     <canvas class="hero-canvas"></canvas>
 
     <div class="hero-content">
         <h2>
-            Originally an area of farming and fishing villages,
-            Hong Kong is now one of the world's most significant 
-            financial centres and commercial ports.
+            Intro content here
         </h2>
     </div>
   </section>
 
-  <section class="about">
-    <p>
-        This animation is driven by a real time WebGL displacement process,
-        where interaction via scrolling allows form to bend, stretch, and reorganize dynamically.
-    </p>
+  <section class="footer">
+    <div class="column">
+      <h2>Hours</h2>
+      <p>Monday 6 AM - 8 PM</p>
+      <p>Tuesday 6 AM - 8 PM</p>
+      <p>Wednesday 6 AM - 8 PM</p>
+      <p>Thursday 6 AM - 8 PM</p>
+      <p>Friday 6 AM - 8 PM</p>
+      <p>Saturday 6 AM - 8 PM</p>
+      <p>Sunday 6 AM - 8 PM</p>
+    </div>
+    <div class="column"><h2>Contact</h2></div>
+    <div class="column"><h2>Location</h2></div>
+    <div class="checker-banner"><img src="./bannerPattern.webp" alt=""/></div>
   </section>
   <script type="module" src="./script.js"></script>
 </body>

@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
-    --base-100: #ebf5df;
-    --base-200: #fec81d;
-    --base-300: #0f0f0f;
+    --base-100: #f8f4e9;
+    --base-200: #e0401e;
+    --base-300: #1b1b1b;
+    --base-400: #fdaec4;
+    --base-500: #4c8cbc;
 }
 
 html, body {
@@ -12,8 +15,8 @@ html, body {
 }
 
 .custom-cursor {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.6rem;
+  height: 1.6rem;
   background-color: white;
   border-radius: 50%;
   position: fixed;
@@ -24,6 +27,7 @@ html, body {
   z-index: 9999;
   mix-blend-mode: difference;
   transition: transform 0.1s ease-out;
+  clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
 }
 
 body:active .custom-cursor {
@@ -34,6 +38,48 @@ body:active .custom-cursor {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.logo {
+    font-family: "Agbalumo";
+    font-size: clamp(1.0rem, 1.5vw, 1.5rem);
+    color: var(--base-100);
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--base-300);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 0px 20px;
+}
+
+.nav-links a {
+    color: var(--base-100);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--base-400);
+    cursor:none;
 }
 
 img {
@@ -75,6 +121,8 @@ p {
     position: absolute;
     width: 100%;
     height: 100%;
+    object-fit: fill;
+    object-position: center bottom;
 }
 
 .hero-header {
@@ -103,9 +151,8 @@ p {
 
 .hero-header img{
     position:absolute;
-    height:14.42rem;
-    width:14.42rem;
-    mix-blend-mode: difference;
+    height:24.0rem;
+    width:24.0rem;
     pointer-events: none;
     z-index:2;
 }
@@ -140,7 +187,7 @@ p {
     user-select: none; 
 }
 
-.about {
+.footer {
     position: relative;
     width: 100%;
     height: 100svh;
@@ -152,11 +199,21 @@ p {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none; 
+    column-count: 3;
+    column-gap: 10rem;
 }
 
-.about p {
-    width: 40%;
-    text-align: center;
+.footer p {
+    text-align: left;
+    justify-content: space-between;
+}
+
+.checker-banner {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    pointer-events: none;
 }
 
 .fade {

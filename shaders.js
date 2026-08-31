@@ -13,48 +13,39 @@ export const fragmentShader = `
     uniform float uSpread;
     varying vec2 vUv;
 
-    float Hash(vec2 p) {
-        vec3 p2 = vec3(p.xy, 1.0);
-        return fract(sin(dot(p2, vec3(37.1, 61.7, 12.4))) * 3758.5453123);
-    }
+    //	<https://www.shadertoy.com/view/Xd23Dh>
+//	by inigo quilez <http://iquilezles.org/www/articles/voronoise/voronoise.htm>
+//
 
-    vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+vec3 hash3( vec2 p ){
+    vec3 q = vec3( dot(p,vec2(127.1,311.7)), 
+				   dot(p,vec2(269.5,183.3)), 
+				   dot(p,vec2(419.2,371.9)) );
+	return fract(sin(q)*43758.5453);
+}
 
-    // Simplex 2D noise
-    float snoise(vec2 v){
-        const vec4 C = vec4(0.211324865405187, 0.366025403784439,
-                -0.577350269189626, 0.024390243902439);
-        vec2 i  = floor(v + dot(v, C.yy) );
-        vec2 x0 = v -   i + dot(i, C.xx);
-        vec2 i1;
-        i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
-        vec4 x12 = x0.xyxy + C.xxzz;
-        x12.xy -= i1;
-        i = mod(i, 289.0);
-        vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
-        + i.x + vec3(0.0, i1.x, 1.0 ));
-        vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
-            dot(x12.zw,x12.zw)), 0.0);
-        m = m*m ;
-        m = m*m ;
-        vec3 x = 2.0 * fract(p * C.www) - 1.0;
-        vec3 h = abs(x) - 0.5;
-        vec3 ox = floor(x + 0.5);
-        vec3 a0 = x - ox;
-        m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
-        vec3 g;
-        g.x  = a0.x  * x0.x  + h.x  * x0.y;
-        g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-        return 130.0 * dot(m, g);
+float iqnoise( in vec2 x, float u, float v ){
+    vec2 p = floor(x);
+    vec2 f = fract(x);
+		
+	float k = 1.0+63.0*pow(1.0-v,4.0);
+	
+	float va = 0.0;
+	float wt = 0.0;
+    for( int j=-2; j<=2; j++ )
+    for( int i=-2; i<=2; i++ )
+    {
+        vec2 g = vec2( float(i),float(j) );
+		vec3 o = hash3( p + g )*vec3(u,u,1.0);
+		vec2 r = g - f + o.xy;
+		float d = dot(r,r);
+		float ww = pow( 1.0-smoothstep(0.0,1.414,sqrt(d)), k );
+		va += o.z*ww;
+		wt += ww;
     }
-
-    float fbm(vec2 p){
-        float v = 0.0;
-        v += snoise(p * 1.0) * 0.5;
-        v += snoise(p * 2.0) * 0.25;
-        v += snoise(p * 4.0) * 0.125;
-        return v;
-    }
+	
+    return va/wt;
+}
 
     void main() {
         vec2 uv = vUv;
@@ -62,7 +53,7 @@ export const fragmentShader = `
         vec2 centeredUv = (uv - 0.5) * vec2(aspect, 1.0);
 
         float dissolveEdge = uv.y - uProgress * 1.2;
-        float noiseValue = fbm(centeredUv * 10.0);
+        float noiseValue = iqnoise(centeredUv * 35.0, 0.0, 2.0);
         float d = dissolveEdge + noiseValue * uSpread;
 
         float pixelSize = 1.0 / uResolution.y;

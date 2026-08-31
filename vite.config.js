@@ -19,5 +19,5 @@ export default {
         }),
         glsl()
     ],
-    base: "/noise-scroll-animation/dist/"
+    base: "/littleTownDiner/dist/"
 }

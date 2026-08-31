@@ -18,7 +18,7 @@ requestAnimationFrame(raf);
 lenis.on("scroll", ScrollTrigger.update);
 
 const CONFIG = {
-    color: "#ebf5df",
+    color: "#f8f4e9",
     spread: 0.3,
     speed: 1.5,
 };
