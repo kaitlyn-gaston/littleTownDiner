@@ -54,11 +54,25 @@ body:active .custom-cursor {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--base-300);
     padding: 15px 30px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: repeating-linear-gradient(
+    45deg,
+    #4c8cbc 0px,
+    #4c8cbc 20px,
+    #366f9d 20px,
+    #366f9d 40px
+    );
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+nav li + li:before{
+    content: "★";
+    color:var(--base-100);
+    padding: 0 20px;
 }
 
 .nav-links {
@@ -66,14 +80,10 @@ body:active .custom-cursor {
     list-style: none;
 }
 
-.nav-links li {
-    padding: 0px 20px;
-}
-
 .nav-links a {
     color: var(--base-100);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     transition: color 0.3s ease;
 }
 
@@ -189,7 +199,8 @@ p {
 
 .footer {
     position: relative;
-    width: 100%;
+    overflow-x: hidden;
+    max-width: 100vw;
     height: 100svh;
     display: flex;
     justify-content: center;
@@ -213,7 +224,9 @@ p {
     height: auto;
     position: absolute;
     bottom: 0;
+    padding-bottom: 2.0rem;
     pointer-events: none;
+    overflow-x: hidden;
 }
 
 .fade {
