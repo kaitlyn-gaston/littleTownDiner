@@ -3,9 +3,10 @@ import * as THREE from "three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Lenis from "lenis";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText, ScrollToPlugin);
 
 const lenis = new Lenis({touchMultiplier: 0});
 function raf(time) {
@@ -112,6 +113,7 @@ document.addEventListener('mouseenter', () => {
   cursor.style.opacity = '1';
 });
 
+// if you wish to add multiple images in the hero section that transition in a slideshow
 let slideIndex = 0;
 
 function showSlides() {
@@ -128,9 +130,24 @@ function showSlides() {
 
 showSlides();
 
+// smooth scroll effect to any links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    const target = this.getAttribute('href');
+    
+    gsap.to(window, {
+      duration: 1.5, 
+      scrollTo: target, 
+      ease: "power2.out"
+    });
+  });
+});
+
 const heroH2 = document.querySelector(".hero-content h2");
 // this is to fix the way the text flashes upon reloading the page
-// when it should not be visible, offset
+// when it should not be visible, offset. do not remove
 heroH2.style.visibility = 'visible';
 const split = new SplitText(heroH2, { type: "words" });
 const words = split.words;

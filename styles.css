@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Rubik+Mono+One&family=Satisfy&display=swap');
 
 :root {
     --base-100: #f8f4e9;
@@ -41,8 +42,8 @@ body:active .custom-cursor {
 }
 
 .logo {
-    font-family: "Agbalumo";
-    font-size: clamp(1.0rem, 1.5vw, 1.5rem);
+    font-family: "Satisfy";
+    font-size: clamp(1.5rem, 2.0vw, 2.0rem);
     color: var(--base-100);
     pointer-events: none;
     -webkit-user-select: none;
@@ -73,6 +74,10 @@ nav li + li:before{
     content: "★";
     color:var(--base-100);
     padding: 0 20px;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    line-height: 8px;
 }
 
 .nav-links {
@@ -84,12 +89,18 @@ nav li + li:before{
     color: var(--base-100);
     text-decoration: none;
     font-size: 20px;
+    font-family: "Rubik Mono One";
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--base-400);
     cursor:none;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
 }
 
 img {
@@ -207,16 +218,18 @@ p {
     align-items: center;
     background-color: var(--base-300);
     color: var(--base-100);
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none; 
     column-count: 3;
     column-gap: 10rem;
+}
+
+.footer h2 {
+    font-family: "Satisfy";
 }
 
 .footer p {
     text-align: left;
     justify-content: space-between;
+    font-family: "Rubik Mono One";
 }
 
 .checker-banner {
