@@ -96,23 +96,6 @@ window.addEventListener("resize", () => {
     material.uniforms.uResolution.value.set(hero.offsetWidth, hero.offsetHeight);
 });
 
-// Custom cursor
-const cursor = document.querySelector('.custom-cursor');
-
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY}px`;
-});
-
-// doesn't work for some reason? maybe a browser thing
-document.addEventListener('mouseleave', () => {
-  cursor.style.opacity = '0';
-});
-
-document.addEventListener('mouseenter', () => {
-  cursor.style.opacity = '1';
-});
-
 // if you wish to add multiple images in the hero section that transition in a slideshow
 let slideIndex = 0;
 
