@@ -183,3 +183,30 @@ ScrollTrigger.create({
         });
     },
 });
+
+
+// Food image carousel
+const track = document.querySelector(".track");
+const carousel = document.querySelector(".carousel");
+
+const getLoopWidth = () => {
+  return track.scrollWidth / 2;
+};
+
+const loop = gsap.to(track, {
+  x: () => -getLoopWidth(),
+  duration: 50, 
+  ease: "none",
+  repeat: -1,
+  modifiers: {
+    x: gsap.utils.unitize(x => parseFloat(x) % getLoopWidth())
+  }
+});
+
+carousel.addEventListener("mouseenter", () => {
+  gsap.to(loop, { timeScale: 0, duration: 0.8, ease: "power1.out" });
+});
+
+carousel.addEventListener("mouseleave", () => {
+  gsap.to(loop, { timeScale: 1, duration: 0.8, ease: "power1.in" });
+});
