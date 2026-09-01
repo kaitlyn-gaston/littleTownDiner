@@ -24,7 +24,7 @@ export const fragmentShader = `
         vec2 centeredUv = (uv - 0.5) * vec2(aspect, 1.0);
 
         float dissolveEdge = uv.y - uProgress * 1.2;
-        float noiseValue = checkerboard(centeredUv * 1.0, 20.0);
+        float noiseValue = checkerboard(centeredUv * 1.0, 30.0);
         float d = dissolveEdge + noiseValue * uSpread;
 
         float pixelSize = 1.0 / uResolution.y;

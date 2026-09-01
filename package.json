@@ -1,5 +1,5 @@
 {
-  "name": "scrolling-animation",
+  "name": "littleTownDiner",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,6 +16,7 @@
   "dependencies": {
     "gsap": "^3.15.0",
     "lenis": "^1.3.25",
+    "react-google-reviews": "^1.9.0",
     "three": "^0.185.1"
   }
 }
