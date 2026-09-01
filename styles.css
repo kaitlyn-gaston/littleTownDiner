@@ -326,7 +326,22 @@ p {
   20%, 80% { opacity: 1; }
 }
 
-@media screen and (max-width:1000px) {
+@media (pointer: fine) {
+    html, body {
+        cursor: none;
+    }
+}
+
+@media (hover: none) {
+    .custom-cursor {
+    display: none !important;
+  }
+  html, body, a, button {
+    cursor: auto !important;
+  }
+}
+
+@media screen and (max-width:768px) {
     .hero-content h2, .about p {
         width: calc(100% - 4rem);
     }
@@ -342,19 +357,4 @@ p {
     .navbar li a.button {
         display: block !important;
     }
-}
-
-@media (pointer: fine) {
-    html, body {
-        cursor: none;
-    }
-}
-
-@media (hover: none) {
-    .custom-cursor {
-    display: none !important;
-  }
-  html, body, a, button {
-    cursor: auto !important;
-  }
 }
