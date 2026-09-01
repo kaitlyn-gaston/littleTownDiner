@@ -19,8 +19,8 @@ lenis.on("scroll", ScrollTrigger.update);
 
 const CONFIG = {
     color: "#f8f4e9",
-    spread: 0.3,
-    speed: 1.5,
+    spread: 0.10,
+    speed: 1.0,
 };
 
 const canvas = document.querySelector(".hero-canvas");
