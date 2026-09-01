@@ -284,7 +284,7 @@ p {
     height: 100svh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-color: var(--base-300);
     color: var(--base-100);
     column-count: 3;
@@ -296,9 +296,15 @@ p {
 }
 
 .footer p {
-    text-align: left;
+    text-align:left;
     justify-content: space-between;
     font-family: "Rubik Mono One";
+    font-size: medium;
+}
+
+.column {
+    margin-top: 3rem;
+    text-align: center;
 }
 
 .checker-banner {
@@ -320,17 +326,21 @@ p {
   20%, 80% { opacity: 1; }
 }
 
-@media screen and (max-width:1000px) and (pointer: coarse) {
+@media screen and (max-width:1000px) {
     .hero-content h2, .about p {
         width: calc(100% - 4rem);
     }
 
-    .navbar-nav li:not(.button) {
-        display: none;
+    .navbar ul li::before { 
+        display: none !important; 
+    }
+
+    .navbar li a:not(.button) {
+        display: none !important;
     }
   
-    .navbar-nav li.button {
-        display: block;
+    .navbar li a.button {
+        display: block !important;
     }
 }
 
