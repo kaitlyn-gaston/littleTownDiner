@@ -197,6 +197,26 @@ p {
     user-select: none; 
 }
 
+.stars-overlay {
+    position:absolute;
+    line-height: 0;
+    font-size: 0;
+    bottom:0;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+    z-index: 5;
+}
+
+.stars-overlay img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
 .photos {
     position: relative;
     width: 100%;
