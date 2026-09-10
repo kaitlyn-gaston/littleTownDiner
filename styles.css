@@ -340,7 +340,7 @@ p {
     }
 
     .nav-links a {
-        font-size: 0.625rem;
+        font-size: 0.7rem;
     }
 
     .navbar ul li::before { 
@@ -353,5 +353,6 @@ p {
   
     .navbar li a.button {
         display: block !important;
+        padding: 0.25rem 0.5rem;
     }
 }
