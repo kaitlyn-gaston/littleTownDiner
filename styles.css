@@ -335,8 +335,12 @@ p {
         width: calc(100% - 4rem);
     }
 
+    .navbar {
+        padding: 0.3rem 0.6rem;
+    }
+
     .nav-links a {
-        font-size: 0.625;
+        font-size: 0.625rem;
     }
 
     .navbar ul li::before { 
