@@ -335,6 +335,15 @@ p {
         width: calc(100% - 4rem);
     }
 
+    .hero-img {
+        max-width:100vw;
+        height: auto;
+    }
+
+    .column {
+        max-width:100vw;
+    }
+
     .logo {
         font-size: 1.1rem;
     }
