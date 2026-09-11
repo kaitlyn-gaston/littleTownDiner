@@ -336,15 +336,15 @@ p {
     }
 
     .logo {
-        font-size: 1.0rem;
+        font-size: 1.1rem;
     }
 
     .navbar {
-        padding: 0.3rem 0.6rem;
+        padding: 0.4rem 0.6rem;
     }
 
     .nav-links a {
-        font-size: 0.85rem;
+        font-size: 1.0rem;
     }
 
     .navbar ul li::before { 
