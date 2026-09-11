@@ -335,9 +335,9 @@ p {
         width: calc(100% - 4rem);
     }
 
-    .hero-header {
-        max-width:100vw;
-        height: auto;
+    .hero-header img{
+        height:23.0rem;
+        width:23.0rem;
     }
 
     .column {
